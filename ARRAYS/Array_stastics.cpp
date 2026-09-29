@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cout<<"Enter the size of array: ";
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cout<<"Enter number for index"<<i+1<<" : ";
+        cin>>arr[i];
+    }
+    int sum=0;
+    int max_element=arr[0];
+    int min_element=arr[0];
+    int max_index=0;
+    int min_index=0;
+    for(int i=0;i<n;i++){
+        sum=sum+arr[i];
+        
+        if(arr[i]>max_element){
+            max_element=arr[i];
+            max_index=i;
+        }
+        
+        if(arr[i]<min_element){
+            min_element=arr[i];
+            min_index=i;
+        }
+    }
+    cout<<"Sum= "<<sum<<endl;
+    cout<<"Average= "<<sum/n<<endl;
+    cout<<"Maximum number: "<<max_element<<" at index "<<max_index<<endl;
+    cout<<"Minimum number: "<<min_element<<" at index "<<min_index<<endl;
+    return 0;
+
+}
